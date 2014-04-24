@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--
+  ~ Copyright 2014 Ali Ok
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<html lang="en" manifest="cache.manifest">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Innflow Sample App</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="resources/external/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/external/bootstrap-theme.min.css">
+
+</head>
+<body role="document">
+
+<div class="container theme-showcase" role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <h1>Hello, world!</h1>
+
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a
+            jumbotron and three supporting pieces of content. Use it as a starting point to create something more
+            unique.</p>
+
+        <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+    </div>
+
+    <div class="page-header">
+        <h1>Add new activity</h1>
+    </div>
+    <div class="well">
+        <p>Add new activity to be sent to server later</p>
+
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="dateInput" class="col-sm-2 control-label">Date</label>
+
+                <div class="col-sm-10">
+                    <input id="dateInput" type="date" class="form-control" placeholder="Date">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="descriptionInput" class="col-sm-2 control-label">Description</label>
+
+                <div class="col-sm-10">
+                    <textarea id="descriptionInput" class="form-control" rows="3" placeholder="Description"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button id="addActivityButton" type="button" class="btn btn-lg btn-success">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        Add
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="page-header">
+        <h1>Manage activities to flush</h1>
+    </div>
+    <div class="well">
+        <p>You can delete any wrong activities before flushing to server</p>
+        <table id="activitiesTable" class="table table-bordered">
+            <tr>
+                <th class="hidden-sm hidden-xs">#</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="page-header">
+        <h1>Flush</h1>
+    </div>
+    <div class="well">
+        <p>Flush your activities to server.</p>
+
+        <div id="flushSuccessMessage" class="alert alert-success alert-dismissable" style="display: none;">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <strong>Well done!</strong> You successfully flushed your activities.
+        </div>
+        <button id="flushButton" type="button" class="btn btn-lg btn-success">
+            <span class="glyphicon glyphicon-upload"></span>
+            Flush
+        </button>
+    </div>
+
+</div>
+<!-- /container -->
+
+<script src="resources/external/json2.min.js"></script>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="resources/external/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="resources/external/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="resources/script/app.js"></script>
+
+<script>
+    $(document).ready(function(){
+        new SampleApp().initialize();
+    });
+</script>
+
+</body>
+</html>
