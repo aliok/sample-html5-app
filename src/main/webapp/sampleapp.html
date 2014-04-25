@@ -19,8 +19,46 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Innflow Sample App</title>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+    <!-- App icons to be used in iOS home screen -->
+    <link rel="apple-touch-icon" href="resources/icon/57x57.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="resources/icon/72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="resources/icon/114x114.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="resources/icon/144x144.png"/>
+
+    <!-- startup images to be used when application starts from iOS home screen -->
+    <!-- iPhone -->
+    <link rel="apple-touch-startup-image" media="(device-width: 320px)"
+          href="resources/startup/320x460.png"/>
+    <!-- iPhone (Retina) -->
+    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)"
+          href="resources/startup/640x920.png"/>
+    <!-- iPhone 5 -->
+    <link rel="apple-touch-startup-image"
+          media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
+          href="resources/startup/640x1096.png"/>
+
+    <!-- iPad (portrait) -->
+    <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait)"
+          href="resources/startup/768x1004.png"/>
+    <!-- iPad (landscape) -->
+    <link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)"
+          href="resources/startup/748x1024.png"/>
+    <!-- iPad (Retina, portrait) -->
+    <link rel="apple-touch-startup-image"
+          media="(device-width: 768px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"
+          href="resources/startup/1536x2008.png"/>
+    <!-- iPad (Retina, landscape) -->
+    <link rel="apple-touch-startup-image"
+          media="(device-width: 768px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"
+          href="resources/startup/1496x2048.png"/>
+
+
+    <title>Sample App</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="resources/external/bootstrap.min.css">

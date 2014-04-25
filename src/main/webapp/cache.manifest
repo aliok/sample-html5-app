@@ -1,6 +1,6 @@
 CACHE MANIFEST
 
-# version 12
+# version 20
 
 CACHE:
 
@@ -22,6 +22,20 @@ CACHE:
 /resources/fonts/glyphicons-halflings-regular.svg
 /resources/fonts/glyphicons-halflings-regular.ttf
 /resources/fonts/glyphicons-halflings-regular.woff
+
+# Images
+/resources/icon/57x57.png
+/resources/icon/72x72.png
+/resources/icon/114x114.png
+/resources/icon/144x144.png
+
+/resoures/startup/320x460.png
+/resoures/startup/640x920.png
+/resoures/startup/640x1096.png
+/resoures/startup/748x1024.png
+/resoures/startup/768x1004.png
+/resoures/startup/1496x2048.png
+/resoures/startup/1536x2008.png
 
 # stuff defined under NETWORK will not be cached at all!
 NETWORK:
