@@ -220,7 +220,8 @@ SampleApp.prototype.showActivities = function () {
         line +=
             '<td><button type="button" class="deleteActivityButton btn btn-danger" data-activity-id="' +
                 activity.id +
-                '"><span class="glyphicon glyphicon-trash"></span>Delete</button></td>';
+                '"><span class="glyphicon glyphicon-trash"></span> ' +
+                'Delete</button></td>';
 
         line += "</tr>";
 
