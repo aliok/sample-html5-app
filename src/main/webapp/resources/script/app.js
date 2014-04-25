@@ -27,6 +27,8 @@ SampleApp.prototype.initialize = function () {
     self.registerAddActivityButtonListener();
     self.registerFlushButtonListener();
     self.registerActivityDeleteButtonListener();
+    self.registerRefreshSummaryButtonListener();
+    self.showSummary();
     self.showActivities();
 };
 
@@ -81,9 +83,9 @@ SampleApp.prototype.registerFlushButtonListener = function () {
 SampleApp.prototype.flushActivities = function () {
     var self = this;
 
-    $.post("flush", {"activities" : window.localStorage['activities']}, function (data) {
+    $.post("flush", {"activities": window.localStorage['activities']}, function (data) {
         alert('Successful : ' + data.success);
-        window.localStorage.clear();
+        window.localStorage.removeItem('activities');
         self.showActivities();
         $('#flushSuccessMessage').show();
     })
@@ -124,6 +126,15 @@ SampleApp.prototype.deleteActivity = function (activityId) {
     self.showActivities();
 };
 
+SampleApp.prototype.registerRefreshSummaryButtonListener = function () {
+    var self = this;
+    $('#refreshSummaryButton').on('click', function () {
+        self.removeSummary();
+        self.getSummary(function () {
+        });
+    });
+};
+
 SampleApp.prototype.showActivities = function () {
     // remove except first line. first line is the table header
     $('#activitiesTable tr:not(tr:first)').remove();
@@ -150,6 +161,29 @@ SampleApp.prototype.showActivities = function () {
     });
 };
 
+SampleApp.prototype.showSummary = function () {
+    // remove except first line. first line is the table header
+    $('#summaryTable tr:not(tr:first)').remove();
+
+    var self = this;
+
+    var activitiesArr = self.getSummary(function (data) {
+        var summaryTable = $('#summaryTable');
+
+        $.each(data.d.results, function (index, summary) {
+            var line = "<tr>";
+
+            line += "<td class='hidden-sm hidden-xs'>" + summary.date + "</td>";
+            line += "<td>" + summary.activities + "</td>";
+            line += "<td>" + summary.hours + "</td>";
+            line += "</tr>";
+            summaryTable.append(line);
+        });
+    });
+};
+
+
+// hacky implementation which converts objects to JSON string and saves it like that
 SampleApp.prototype.getActivities = function () {
     if (!window.localStorage['activities'])
         window.localStorage['activities'] = '{"activitiesArr":[]}';
@@ -161,12 +195,34 @@ SampleApp.prototype.getActivities = function () {
     return activitiesObj['activitiesArr'];
 };
 
+// hacky implementation which converts objects to JSON string and saves it like that
 SampleApp.prototype.saveActivities = function (activitiesArr) {
     var activitiesObj = {
         "activitiesArr": activitiesArr
     };
 
     window.localStorage['activities'] = JSON.stringify(activitiesObj);
+};
+
+// hacky implementation which converts objects to JSON string and saves it like that
+SampleApp.prototype.getSummary = function (callback) {
+    if (!window.localStorage['summary']) {
+        $.post("summary.json", {}, function (data) {
+            window.localStorage.removeItem('summary');
+            window.localStorage['summary'] = data;
+            callback(jQuery.parseJSON(data));
+        })
+            .fail(function () {
+                alert("error fetching the summary");
+            });
+    }
+    else {
+        callback(jQuery.parseJSON(window.localStorage['summary']));
+    }
+};
+
+SampleApp.prototype.removeSummary = function (callback) {
+    window.localStorage.removeItem('summary');
 };
 
 SampleApp.prototype.guid = function () {

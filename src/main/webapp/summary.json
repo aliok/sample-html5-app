@@ -1,0 +1,32 @@
+{"d": {
+    "url": "http://xxxx.net:8000/sap/opu/odata/sap/Z_SD_COCKPIT_SRV/cockpitResultSet?&%24format=json&sap-client=001&selectionvariant=TEST_HARI",
+    "results": [
+        {
+            "__metadata": {
+                "uri": "http://xxxx:8000/sap/opu/odata/sap/Z_SD_COCKPIT_SRV/cockpitResultSet(documentNumberOrder='',documentType='B',documentNumberQuotation='20000792',documentNumberDelivery='',documentNumberInvoice='')",
+                "type": "Z_SD_COCKPIT_SRV.cockpitResult"
+            },
+            "date": "01.01.2014",
+            "activities": "0",
+            "hours": "0"
+        },
+        {
+            "__metadata": {
+                "uri": "http://xxxx.net:8000/sap/opu/odata/sap/Z_SD_COCKPIT_SRV/cockpitResultSet(documentNumberOrder='',documentType='B',documentNumberQuotation='20000792',documentNumberDelivery='',documentNumberInvoice='')",
+                "type": "Z_SD_COCKPIT_SRV.cockpitResult"
+            },
+            "date": "02.01.2014",
+            "activities": "10",
+            "hours": "8"
+        },
+        {
+            "__metadata": {
+                "uri": "http://xxxx.net:8000/sap/opu/odata/sap/Z_SD_COCKPIT_SRV/cockpitResultSet(documentNumberOrder='',documentType='B',documentNumberQuotation='20000792',documentNumberDelivery='',documentNumberInvoice='')",
+                "type": "Z_SD_COCKPIT_SRV.cockpitResult"
+            },
+            "date": "03.01.2014",
+            "activities": "4",
+            "hours": "8"
+        }
+    ]
+}}

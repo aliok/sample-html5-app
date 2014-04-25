@@ -43,6 +43,27 @@
     </div>
 
     <div class="page-header">
+        <h1>Your summary</h1>
+    </div>
+    <div class="well">
+        <p>Here are the activities you sent already</p>
+
+        <p>
+            <button id="refreshSummaryButton" type="button" class="btn btn-lg btn-success">
+                <span class="glyphicon glyphicon-refresh"></span>
+                Refresh
+            </button>
+        </p>
+        <table id="summaryTable" class="table table-bordered">
+            <tr>
+                <th>Date</th>
+                <th>Activities</th>
+                <th>Hours</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="page-header">
         <h1>Add new activity</h1>
     </div>
     <div class="well">
@@ -118,7 +139,7 @@
 <script type="text/javascript" src="resources/script/app.js"></script>
 
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         new SampleApp().initialize();
     });
 </script>

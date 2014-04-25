@@ -1,6 +1,6 @@
 CACHE MANIFEST
 
-# version 4
+# version 12
 
 CACHE:
 
@@ -25,3 +25,4 @@ CACHE:
 
 NETWORK:
 /flush
+/summary.json
