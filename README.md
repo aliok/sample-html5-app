@@ -43,9 +43,9 @@ How to get started
 
 2. ```git clone git@github.com:aliok/sample-html5-app.git```
 
-3. ```cd cd sample-html5-app```
+3. ```cd sample-html5-app```
 
-4. ```mvn```
+4. Call ```mvn```
 
 5. Go to ```localhost:9999```
 
