@@ -34,6 +34,7 @@ public class FlushServlet extends javax.servlet.http.HttpServlet {
         super.service(req, res);
     }
 
+    // do nothing. Just write received stuff to console and return the number of received parsed activities.
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         final String activitiesParam = req.getParameter("activities");

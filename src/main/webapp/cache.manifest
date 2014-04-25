@@ -23,6 +23,7 @@ CACHE:
 /resources/fonts/glyphicons-halflings-regular.ttf
 /resources/fonts/glyphicons-halflings-regular.woff
 
+# stuff defined under NETWORK will not be cached at all!
 NETWORK:
 /flush
 /summary.json

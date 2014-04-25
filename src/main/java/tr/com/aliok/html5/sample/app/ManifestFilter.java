@@ -20,6 +20,11 @@ import javax.servlet.*;
 import java.io.IOException;
 
 /**
+ * HTML5 spec expects that cache manifests are served with mime type 'text/cache-manifest'.
+ * Otherwise application cache does not work.
+ * <p/>
+ * This class provides that.
+ *
  * @author Ali Ok (ali.ok@apache.org)
  */
 public class ManifestFilter implements Filter {
