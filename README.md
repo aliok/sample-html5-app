@@ -25,10 +25,29 @@ Features
 * Responsive (Bootstrap)
 
 
-How to get started
+How to get started - advanced
 ==============================
 Just issue "mvn" and maven does the rest;
 
 Once up, point your browser to "localhost:9999" and play with it.
 
 HAVE FUN!
+
+
+How to get started
+================================
+1. Install Maven
+    - In Mac, you can install it using HomeBrew : ```brew install maven```
+    - In Debian based Linux, you can install it using Aptitude: ```apt-get install maven```
+    - In Windows check http://maven.apache.org/download.cgi . Installation instructions are there
+
+2. ```git clone git@github.com:aliok/sample-html5-app.git```
+
+3. ```cd cd sample-html5-app```
+
+4. ```mvn```
+
+5. Go to ```localhost:9999```
+
+
+
